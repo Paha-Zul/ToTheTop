@@ -44,15 +44,15 @@ class GameScreen : Screen {
     }
 
     fun checkMove(){
-        when{
-            Gdx.input.isKeyPressed(Input.Keys.A) -> player.moveLeft()
-            Gdx.input.isKeyPressed(Input.Keys.D) -> player.moveRight()
-            Gdx.input.isTouched -> {
-                if(Gdx.input.x < MyGame.cameraViewport.screenWidth*0.2f)
-                    player.moveLeft()
-                else if(Gdx.input.x > MyGame.cameraViewport.screenWidth*0.8f)
-                    player.moveRight()
-            }
+        if(Gdx.input.isKeyPressed(Input.Keys.A))
+            player.moveLeft()
+        if(Gdx.input.isKeyPressed(Input.Keys.D))
+            player.moveRight()
+        if(Gdx.input.isTouched ){
+            if(Gdx.input.x < MyGame.cameraViewport.screenWidth*0.2f)
+                player.moveLeft()
+            else if(Gdx.input.x > MyGame.cameraViewport.screenWidth*0.8f)
+                player.moveRight()
         }
     }
 
