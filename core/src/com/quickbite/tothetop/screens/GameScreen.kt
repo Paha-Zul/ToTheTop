@@ -43,17 +43,25 @@ class GameScreen : Screen {
         MyGame.shapeRenderer.end()
     }
 
-    fun checkMove(){
+    private fun checkMove(){
+        for(i in 0..10){
+            if(Gdx.input.isTouched(i)){
+
+                if(Gdx.input.isTouched ){
+                    if(MyGame.cameraViewport.screenHeight - Gdx.input.y < MyGame.cameraViewport.screenHeight*0.2f)
+                        player.jump()
+                    else if(Gdx.input.x < MyGame.cameraViewport.screenWidth*0.2f)
+                        player.moveLeft()
+                    else if(Gdx.input.x > MyGame.cameraViewport.screenWidth*0.8f)
+                        player.moveRight()
+                }
+            }
+        }
+
         if(Gdx.input.isKeyPressed(Input.Keys.A))
             player.moveLeft()
         if(Gdx.input.isKeyPressed(Input.Keys.D))
             player.moveRight()
-        if(Gdx.input.isTouched ){
-            if(Gdx.input.x < MyGame.cameraViewport.screenWidth*0.2f)
-                player.moveLeft()
-            else if(Gdx.input.x > MyGame.cameraViewport.screenWidth*0.8f)
-                player.moveRight()
-        }
     }
 
     override fun hide() {

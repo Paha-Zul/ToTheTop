@@ -6,6 +6,7 @@ import com.badlogic.gdx.graphics.GL20;
 import com.badlogic.gdx.graphics.OrthographicCamera;
 import com.badlogic.gdx.graphics.g2d.SpriteBatch;
 import com.badlogic.gdx.graphics.glutils.ShapeRenderer;
+import com.badlogic.gdx.utils.viewport.FillViewport;
 import com.badlogic.gdx.utils.viewport.FitViewport;
 import com.badlogic.gdx.utils.viewport.ScreenViewport;
 import com.badlogic.gdx.utils.viewport.Viewport;
@@ -25,7 +26,7 @@ public class MyGame extends Game {
 		camera = new OrthographicCamera(480, 800);
         shapeRenderer = new ShapeRenderer();
 
-        cameraViewport = new ScreenViewport(camera);
+        cameraViewport = new FillViewport(480, 800, camera);
 
 		setScreen(new GameScreen());
 	}

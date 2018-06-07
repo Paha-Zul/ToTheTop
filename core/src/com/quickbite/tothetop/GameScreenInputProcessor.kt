@@ -41,12 +41,12 @@ class GameScreenInputProcessor(val screen: GameScreen) : InputProcessor {
     }
 
     override fun touchDown(screenX: Int, screenY: Int, pointer: Int, button: Int): Boolean {
-        val y = MyGame.cameraViewport.screenHeight - screenY
-        println("ScreenY: $y, screenHeight: ${MyGame.cameraViewport.screenHeight}")
-        if(y <= MyGame.cameraViewport.screenHeight*0.20f) {
-            println("Jump")
-            screen.player.jump()
-        }
+//        val y = MyGame.cameraViewport.screenHeight - screenY
+//        println("ScreenY: $y, screenHeight: ${MyGame.cameraViewport.screenHeight}")
+//        if(y <= MyGame.cameraViewport.screenHeight*0.20f) {
+//            println("Jump")
+//            screen.player.jump()
+//        }
 
         return false
     }

@@ -60,8 +60,8 @@ class Player {
         boundingBox.setPosition(position)
 
         val result = PlatformManager.collideAndSlide(boundingBox, velocity)
-        colliding = result.first
         position.set(result.second)
+        colliding = result.first && result.third!!.box.y < position.y
 
         velocity.x = 0f
     }
