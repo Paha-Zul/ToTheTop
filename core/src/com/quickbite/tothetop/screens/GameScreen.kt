@@ -50,7 +50,7 @@ class GameScreen : Screen {
                 if(Gdx.input.isTouched ){
                     if(MyGame.cameraViewport.screenHeight - Gdx.input.y < MyGame.cameraViewport.screenHeight*0.2f)
                         player.jump()
-                    else if(Gdx.input.x < MyGame.cameraViewport.screenWidth*0.2f)
+                else if(Gdx.input.x < MyGame.cameraViewport.screenWidth*0.2f)
                         player.moveLeft()
                     else if(Gdx.input.x > MyGame.cameraViewport.screenWidth*0.8f)
                         player.moveRight()
